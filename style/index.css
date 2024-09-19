@@ -1,0 +1,93 @@
+@font-face {
+    font-family: 'soulmaze';
+    src: url('../police/made_soulmaze/MADE\ Soulmaze\ PERSONAL\ USE.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'standrock';
+    src: url('../police/stand-rock-font/Standrock-gxGP4.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+/* style pour html et body  */
+
+html, body {
+    height: 150%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    background-color: #6E22DD;
+    color: #28282D;
+}
+
+/* positionnement de la div principal GAME */
+
+#game {
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    background-color: #cddd20;
+    margin-top: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* ajout des police */
+
+p {
+    font-family: 'standrock', sans-serif;
+    font-size: clamp(30px, 5vw, 70px);
+}
+
+h1 {
+    position: absolute;
+    font-family: 'soulmaze', sans-serif;
+    font-size: clamp(40px, 8vw, 90px);
+}
+
+/* position et taille du logo */
+
+#logo {
+    width: 100%;
+    max-width: 200px;
+    text-align: center;
+}
+
+#logo img {
+    width: 100%;
+    height: auto;
+    max-width: 114px;
+}
+
+/* placement de la div du titre */
+
+#title {
+    position: absolute;
+    top: 20%;
+    width: 50%;
+    display: flex;
+}
+
+
+
+#ponctuation {
+    position: relative;
+    left: 30%;
+    top: 20%;
+    height: clamp(150px, 20vw, 214px);
+}
+
+/* Placement des SVG */
+
+.svg-111 {
+    position: absolute;
+    top: 10%;
+    left: 9.5%;
+}
