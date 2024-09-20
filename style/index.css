@@ -12,8 +12,6 @@
     font-style: normal;
 }
 
-/* style pour html et body  */
-
 html, body {
     height: 150%;
     margin: 0;
@@ -26,8 +24,6 @@ body {
     color: #28282D;
 }
 
-/* positionnement de la div principal GAME */
-
 #game {
     position: absolute;
     height: 100vh;
@@ -39,8 +35,6 @@ body {
     align-items: center;
 }
 
-/* ajout des police */
-
 p {
     font-family: 'standrock', sans-serif;
     font-size: clamp(30px, 5vw, 70px);
@@ -51,8 +45,6 @@ h1 {
     font-family: 'soulmaze', sans-serif;
     font-size: clamp(40px, 8vw, 90px);
 }
-
-/* position et taille du logo */
 
 #logo {
     margin-top: 2em;
@@ -67,8 +59,6 @@ h1 {
     height: auto;
     max-width: 114px;
 }
-
-/* placement de la div du titre */
 
 #title {
     margin-top: 1em;
@@ -89,19 +79,12 @@ h1 {
     font-size: clamp(20px, 4vw, 40px);
 }
 
-/* placement du point dexlamation */
-
 #ponctuation {
     position: relative;
     left: 30%;
     top: 3%;
     height: clamp(50px, 20vw, 214px);
 }
-
-/* Placement des SVG */
-
-
-/* ON place les SVG sur les lettres */
 
 .letter-p, .letter-r, .letter-a, .letter-3 {
     position: relative;
@@ -126,9 +109,6 @@ h1 {
     height: 100%;
     z-index: 1;
 }
-
-
-/* lettre animée */
 
 .animated-text {
     visibility: hidden;
@@ -158,12 +138,142 @@ h1 {
     transform: rotate(9.3deg);
 }
 
-/* PLacement des gobelet */
+#gobelets {
+    margin-top: 7em;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    flex-wrap: wrap;
+}
 
 #gobelet {
-    margin-top: 5em;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: visible;
+    width: 50%;
+    max-width: 250px;
+}
+
+#gobelets img {
+    margin-inline: 2em;
+    width: 100%;
+    height: auto;
+}
+
+#gobelet span {
+    color: white;
+    font-family: 'standrock', sans-serif;
+    font-size: 31px;
+    background-color: #28282D;
+    clip-path: ellipse(42px 21px at center);
+    display: inline-block;
+    width: 84px;
+    height: 42px;
+    text-align: center;
+    line-height: 42px;
+    position: absolute;
+    bottom: -21px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+
+@media (max-width: 768px) {
+    #gobelet {
+        width: 40%;
+    }
+
+    #gobelets img {
+        margin-inline: 1.5em;
+    }
+}
+
+@media (max-width: 480px) {
+    #gobelet {
+        width: 30%;
+    }
+
+    #gobelets img {
+        margin-inline: 1em;
+    }
+
+    #gobelet span {
+        font-size: 18px;
+    }
 }
 
 #gobelet img {
-    margin-inline: 3em;
+    position: relative;
+    z-index: 3;
+    transition: transform 0.5s ease;
+    transform: translateY(-50px);
+}
+
+#gobelets img {
+    margin-inline: 0.5em;
+}
+
+#gobelet span {
+    font-size: 20px;
+}
+
+.moveRightGoblets, .moveLeftGoblets {
+    animation-delay: 0.5s;
+}
+
+.moveRightGoblets {
+    animation: RightgobeletAnimation 5s ease-in-out forwards;
+}
+
+@keyframes RightgobeletAnimation {
+    0% { transform: translateY(0) translateX(0); }
+    10% { transform: translateY(50px) translateX(0); }
+    20%, 30%, 40%, 50%, 60% { transform: translateY(50px) translateX(-350px); }
+    25%, 35%, 45%, 55%, 65% { transform: translateY(50px) translateX(100px); }
+    70%, 100% { transform: translateY(50px) translateX(0); }
+}
+
+.moveLeftGoblets {
+    animation: LeftgobeletAnimation 5s ease-in-out forwards;
+}
+
+@keyframes LeftgobeletAnimation {
+    0% { transform: translateY(0) translateX(0); }
+    10% { transform: translateY(50px) translateX(0); }
+    20%, 30%, 40%, 50%, 60% { transform: translateY(50px) translateX(350px); }
+    25%, 35%, 45%, 55%, 65% { transform: translateY(50px) translateX(-100px); }
+    70%, 100% { transform: translateY(50px) translateX(0); }
+}
+
+.shakeGoblets {
+    animation: shakeAnimation 0.5s ease-in-out forwards;
+}
+
+@keyframes shakeAnimation {
+    0%, 100% { transform: translateY(50px) translateX(0); }
+    25% { transform: translateY(50px) translateX(-5px); }
+    50% { transform: translateY(50px) translateX(5px); }
+    75% { transform: translateY(50px) translateX(-5px); }
+}
+
+.UpGoblet {
+    animation: UpGobletAnimation 0.5s ease-in-out forwards;
+}
+
+@keyframes UpGobletAnimation {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-50px); }
+}
+
+.DownGoblet {
+    animation: DownGobletAnimation 0.5s ease-in-out forwards;
+}
+
+@keyframes DownGobletAnimation {
+    0% { transform: translateY(-50px); }
+    100% { transform: translateY(0); }
 }

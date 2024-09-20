@@ -1,44 +1,91 @@
 import { gsap } from "gsap";
-    
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { TextPlugin } from "gsap/TextPlugin";
 
+gsap.registerPlugin(ScrollTrigger);
 
-gsap.registerPlugin(ScrollTrigger,TextPlugin);
+function animateText() {
+  return new Promise((resolve) => {
+    const delay = 50;
+    let delayStart = 0;
+    const paragraphDelay = 350;
 
-function animate_text() 
-{
-  let delay = 100, 
-      delay_start = 0,
-      paragraph_delay = 500; // Délai entre chaque paragraphe
+    document.querySelectorAll("p.animated-text").forEach((elem) => {
+      const letters = elem.textContent.trim().split("");
+      elem.textContent = "";
+      elem.style.visibility = 'visible';
 
-  document.querySelectorAll("p.animated-text").forEach(function (elem, index) {
-    let contents = elem.textContent.trim();
-    let letters = contents.split("");
-    elem.textContent = "";
-    elem.style.visibility = 'visible';
+      letters.forEach((letter, index) => {
+        setTimeout(() => {
+          elem.textContent += letter;
+        }, delayStart + delay * index);
+      });    
 
-    letters.forEach(function (letter, letter_index) {
-      setTimeout(function () {
-        elem.textContent += letter;
-      }, delay_start + delay * letter_index);
-    });    
+      delayStart += delay * letters.length + paragraphDelay;
+    });
 
-    delay_start += delay * letters.length + paragraph_delay;
+    setTimeout(resolve, delayStart);
   });
 }
-animate_text();
 
-// Gsap pour l'arrivé des text 
+function downGoblets() {
+    return new Promise((resolve) => {
+        document.querySelectorAll('.gobelet img').forEach(img => img.classList.add('DownGoblet'));
+        document.querySelectorAll('.gobelet span').forEach(span => span.style.opacity = '0');
+        setTimeout(resolve, 500);
+    });
+}
+
+function upGoblet(event) {
+    const img = event.currentTarget.querySelector('img');
+    const span = event.currentTarget.querySelector('span');
+    
+    if (img.classList.contains('DownGoblet')) {
+        img.classList.remove('DownGoblet');
+        img.style.transform = 'translateY(-50px)';
+        span.style.opacity = '1';
+    }
+}
+
+function shakeGoblets() {
+    document.querySelectorAll('.gobelet').forEach(goblet => {
+        goblet.classList.add('shakeGoblets');
+    });
+}
+
+function moveGoblets() {
+    return new Promise((resolve) => {
+        const goblets = document.querySelectorAll('.gobelet');
+        goblets[0].classList.add('moveLeftGoblets');
+        goblets[1].classList.add('moveRightGoblets');
+
+        // Attendre la fin de l'animation de mouvement
+        setTimeout(() => {
+            shakeGoblets();
+            // Supprimer les classes de mouvement après la secousse
+            setTimeout(() => {
+                goblets.forEach(goblet => {
+                    goblet.classList.remove('moveLeftGoblets', 'moveRightGoblets');
+                });
+                resolve();
+            }, 500); // 500ms = durée de l'animation de secousse
+        }, 5000); // 5000ms = 5s, la durée de l'animation de mouvement
+    });
+}
 
 document.addEventListener("DOMContentLoaded", () => {
-  gsap.registerPlugin(ScrollTrigger);
+  document.querySelectorAll('.gobelet').forEach(goblet => {
+    goblet.addEventListener('click', upGoblet);
+  });
 
-  gsap.to('.text1', {
-    scrollTrigger: '.text1',
-    x: 100,
-    rotation: 360,
-    duration: 5,
+  ScrollTrigger.create({
+    trigger: '#title',
+    start: 'top 80%',
+    onEnter: async () => {
+      await animateText();
+      await downGoblets();
+      await moveGoblets(); // Maintenant, on attend que moveGoblets se termine
+    },
+    once: true
   });
 });
 
