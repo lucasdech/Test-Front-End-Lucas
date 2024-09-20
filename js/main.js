@@ -58,17 +58,15 @@ function moveGoblets() {
         goblets[0].classList.add('moveLeftGoblets');
         goblets[1].classList.add('moveRightGoblets');
 
-        // Attendre la fin de l'animation de mouvement
         setTimeout(() => {
             shakeGoblets();
-            // Supprimer les classes de mouvement après la secousse
             setTimeout(() => {
                 goblets.forEach(goblet => {
                     goblet.classList.remove('moveLeftGoblets', 'moveRightGoblets');
                 });
                 resolve();
             }, 500); // 500ms = durée de l'animation de secousse
-        }, 5000); // 5000ms = 5s, la durée de l'animation de mouvement
+        }, 5000); // 5000ms = la durée de l'animation de mouvement
     });
 }
 
@@ -83,7 +81,7 @@ document.addEventListener("DOMContentLoaded", () => {
     onEnter: async () => {
       await animateText();
       await downGoblets();
-      await moveGoblets(); // Maintenant, on attend que moveGoblets se termine
+      await moveGoblets();
     },
     once: true
   });

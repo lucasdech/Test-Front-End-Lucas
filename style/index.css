@@ -1,3 +1,4 @@
+/* Polices personnalisées */
 @font-face {
     font-family: 'soulmaze';
     src: url('../police/made_soulmaze/MADE\ Soulmaze\ PERSONAL\ USE.otf') format('truetype');
@@ -12,6 +13,7 @@
     font-style: normal;
 }
 
+/* Styles de base */
 html, body {
     height: 150%;
     margin: 0;
@@ -22,17 +24,6 @@ body {
     min-height: 100vh;
     background-color: #6E22DD;
     color: #28282D;
-}
-
-#game {
-    position: absolute;
-    height: 100vh;
-    width: 100%;
-    background-color: #cddd20;
-    margin-top: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 
 p {
@@ -46,6 +37,19 @@ h1 {
     font-size: clamp(40px, 8vw, 90px);
 }
 
+/* Section de jeu */
+#game {
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    background-color: #cddd20;
+    margin-top: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Logo */
 #logo {
     margin-top: 2em;
     width: 100%;
@@ -60,6 +64,7 @@ h1 {
     max-width: 114px;
 }
 
+/* Titre */
 #title {
     margin-top: 1em;
     position: absolute;
@@ -79,6 +84,7 @@ h1 {
     font-size: clamp(20px, 4vw, 40px);
 }
 
+/* Ponctuation */
 #ponctuation {
     position: relative;
     left: 30%;
@@ -86,6 +92,7 @@ h1 {
     height: clamp(50px, 20vw, 214px);
 }
 
+/* Lettres */
 .letter-p, .letter-r, .letter-a, .letter-3 {
     position: relative;
     display: inline-block;
@@ -110,6 +117,7 @@ h1 {
     z-index: 1;
 }
 
+/* Texte animé */
 .animated-text {
     visibility: hidden;
     display: inline-block;
@@ -138,6 +146,7 @@ h1 {
     transform: rotate(9.3deg);
 }
 
+/* Gobelets */
 #gobelets {
     margin-top: 7em;
     display: flex;
@@ -162,6 +171,13 @@ h1 {
     height: auto;
 }
 
+#gobelet img {
+    position: relative;
+    z-index: 3;
+    transition: transform 0.5s ease;
+    transform: translateY(-50px);
+}
+
 #gobelet span {
     color: white;
     font-family: 'standrock', sans-serif;
@@ -182,6 +198,66 @@ h1 {
     transition: opacity 0.5s ease;
 }
 
+/* Animations des gobelets */
+.moveRightGoblets, .moveLeftGoblets {
+    animation-delay: 0.5s;
+}
+
+.moveRightGoblets {
+    animation: RightgobeletAnimation 5s ease-in-out forwards;
+}
+
+.moveLeftGoblets {
+    animation: LeftgobeletAnimation 5s ease-in-out forwards;
+}
+
+.shakeGoblets {
+    animation: shakeAnimation 0.5s ease-in-out forwards;
+}
+
+.UpGoblet {
+    animation: UpGobletAnimation 0.5s ease-in-out forwards;
+}
+
+.DownGoblet {
+    animation: DownGobletAnimation 0.5s ease-in-out forwards;
+}
+
+/* Keyframes pour les animations */
+@keyframes RightgobeletAnimation {
+    0% { transform: translateY(0) translateX(0); }
+    10% { transform: translateY(50px) translateX(0); }
+    20%, 30%, 40%, 50%, 60% { transform: translateY(50px) translateX(-350px); }
+    25%, 35%, 45%, 55%, 65% { transform: translateY(50px) translateX(100px); }
+    70%, 100% { transform: translateY(50px) translateX(0); }
+}
+
+@keyframes LeftgobeletAnimation {
+    0% { transform: translateY(0) translateX(0); }
+    10% { transform: translateY(50px) translateX(0); }
+    20%, 30%, 40%, 50%, 60% { transform: translateY(50px) translateX(350px); }
+    25%, 35%, 45%, 55%, 65% { transform: translateY(50px) translateX(-100px); }
+    70%, 100% { transform: translateY(50px) translateX(0); }
+}
+
+@keyframes shakeAnimation {
+    0%, 100% { transform: translateY(50px) translateX(0); }
+    25% { transform: translateY(50px) translateX(-5px); }
+    50% { transform: translateY(50px) translateX(5px); }
+    75% { transform: translateY(50px) translateX(-5px); }
+}
+
+@keyframes UpGobletAnimation {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-50px); }
+}
+
+@keyframes DownGobletAnimation {
+    0% { transform: translateY(-50px); }
+    100% { transform: translateY(0); }
+}
+
+/* Media queries */
 @media (max-width: 768px) {
     #gobelet {
         width: 40%;
@@ -193,6 +269,22 @@ h1 {
 
     #gobelets {
         margin-top: 15em;
+    }
+
+    @keyframes RightgobeletAnimation {
+        0% { transform: translateY(0) translateX(0); }
+        10% { transform: translateY(50px) translateX(0); }
+        20%, 30%, 40%, 50%, 60% { transform: translateY(50px) translateX(-200px); }
+        25%, 35%, 45%, 55%, 65% { transform: translateY(50px) translateX(50px); }
+        70%, 100% { transform: translateY(50px) translateX(0); }
+    }
+
+    @keyframes LeftgobeletAnimation {
+        0% { transform: translateY(0) translateX(0); }
+        10% { transform: translateY(50px) translateX(0); }
+        20%, 30%, 40%, 50%, 60% { transform: translateY(50px) translateX(200px); }
+        25%, 35%, 45%, 55%, 65% { transform: translateY(50px) translateX(-50px); }
+        70%, 100% { transform: translateY(50px) translateX(0); }
     }
 }
 
@@ -212,82 +304,46 @@ h1 {
     #gobelets {
         margin-top: 20em;
     }
+
+    .text2 {
+        position: absolute;
+        top: 40%;
+        left: 0;
+        transform: rotate(-4.03deg);
+    }
+
+    #title p {
+        position: absolute;
+        bottom: 45%;
+        left: 35%;
+    }
+
+    @keyframes RightgobeletAnimation {
+        0% { transform: translateY(0) translateX(0); }
+        10% { transform: translateY(50px) translateX(0); }
+        20%, 30%, 40%, 50%, 60% { transform: translateY(50px) translateX(-100px); }
+        25%, 35%, 45%, 55%, 65% { transform: translateY(50px) translateX(30px); }
+        70%, 100% { transform: translateY(50px) translateX(0); }
+    }
+
+    @keyframes LeftgobeletAnimation {
+        0% { transform: translateY(0) translateX(0); }
+        10% { transform: translateY(50px) translateX(0); }
+        20%, 30%, 40%, 50%, 60% { transform: translateY(50px) translateX(100px); }
+        25%, 35%, 45%, 55%, 65% { transform: translateY(50px) translateX(-30px); }
+        70%, 100% { transform: translateY(50px) translateX(0); }
+    }
 }
 
 @media (max-width: 360px) {
     #gobelets {
         margin-top: 25em;
     }
-}
 
-#gobelet img {
-    position: relative;
-    z-index: 3;
-    transition: transform 0.5s ease;
-    transform: translateY(-50px);
-}
-
-#gobelets img {
-    margin-inline: 0.5em;
-}
-
-#gobelet span {
-    font-size: 20px;
-}
-
-.moveRightGoblets, .moveLeftGoblets {
-    animation-delay: 0.5s;
-}
-
-.moveRightGoblets {
-    animation: RightgobeletAnimation 5s ease-in-out forwards;
-}
-
-@keyframes RightgobeletAnimation {
-    0% { transform: translateY(0) translateX(0); }
-    10% { transform: translateY(50px) translateX(0); }
-    20%, 30%, 40%, 50%, 60% { transform: translateY(50px) translateX(-350px); }
-    25%, 35%, 45%, 55%, 65% { transform: translateY(50px) translateX(100px); }
-    70%, 100% { transform: translateY(50px) translateX(0); }
-}
-
-.moveLeftGoblets {
-    animation: LeftgobeletAnimation 5s ease-in-out forwards;
-}
-
-@keyframes LeftgobeletAnimation {
-    0% { transform: translateY(0) translateX(0); }
-    10% { transform: translateY(50px) translateX(0); }
-    20%, 30%, 40%, 50%, 60% { transform: translateY(50px) translateX(350px); }
-    25%, 35%, 45%, 55%, 65% { transform: translateY(50px) translateX(-100px); }
-    70%, 100% { transform: translateY(50px) translateX(0); }
-}
-
-.shakeGoblets {
-    animation: shakeAnimation 0.5s ease-in-out forwards;
-}
-
-@keyframes shakeAnimation {
-    0%, 100% { transform: translateY(50px) translateX(0); }
-    25% { transform: translateY(50px) translateX(-5px); }
-    50% { transform: translateY(50px) translateX(5px); }
-    75% { transform: translateY(50px) translateX(-5px); }
-}
-
-.UpGoblet {
-    animation: UpGobletAnimation 0.5s ease-in-out forwards;
-}
-
-@keyframes UpGobletAnimation {
-    0% { transform: translateY(0); }
-    100% { transform: translateY(-50px); }
-}
-
-.DownGoblet {
-    animation: DownGobletAnimation 0.5s ease-in-out forwards;
-}
-
-@keyframes DownGobletAnimation {
-    0% { transform: translateY(-50px); }
-    100% { transform: translateY(0); }
+    .text2 {
+        position: absolute;
+        top: 40%;
+        left: 0;
+        transform: rotate(-4.03deg);
+    }
 }
