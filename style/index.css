@@ -59,6 +59,7 @@ h1 {
     width: 100%;
     max-width: 200px;
     text-align: center;
+    user-select: none;
 }
 
 #logo img {
@@ -76,6 +77,7 @@ h1 {
     width: 50%;
     height: 50%;
     display: flex;
+    user-select: none;
 }
 
 #title p {
@@ -93,7 +95,7 @@ h1 {
     position: relative;
     left: 30%;
     top: 3%;
-    height: clamp(150px, 20vw, 214px);
+    height: clamp(50px, 20vw, 214px);
 }
 
 /* Placement des SVG */
@@ -115,10 +117,6 @@ h1 {
     margin-left: 0.1em;
 }
 
-/* Ajustements spécifiques pour R et A */
-
-
-
 .letter-p .svg-112, .letter-r .svg-111, .letter-a .svg-114, .letter-3 .svg-113 {
     position: absolute;
     top: 50%;
@@ -130,5 +128,42 @@ h1 {
 }
 
 
+/* lettre animée */
 
+.animated-text {
+    visibility: hidden;
+    display: inline-block;
+    font-size: clamp(20px, 5vw, 50px);
+    user-select: none;
+}
 
+.text1 {
+    position: absolute;
+    top: 5%;
+    left: 9%;
+    transform: rotate(-15deg);
+}
+
+.text2 {
+    position: absolute;
+    top: 35%;
+    left: 0;
+    transform: rotate(-4.03deg);
+}
+
+.text3 {
+    position: absolute;
+    top: 5%;
+    left: 60%;
+    transform: rotate(9.3deg);
+}
+
+/* PLacement des gobelet */
+
+#gobelet {
+    margin-top: 5em;
+}
+
+#gobelet img {
+    margin-inline: 3em;
+}

@@ -1,5 +1,13 @@
 {
   "dependencies": {
     "gsap": "^3.12.5"
+  },
+  "devDependencies": {
+    "vite": "^5.4.6"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   }
 }
