@@ -187,8 +187,12 @@ h1 {
         width: 40%;
     }
 
-    #gobelets img {
+    #gobelet img {
         margin-inline: 1.5em;
+    }
+
+    #gobelets {
+        margin-top: 15em;
     }
 }
 
@@ -197,12 +201,22 @@ h1 {
         width: 30%;
     }
 
-    #gobelets img {
+    #gobelet img {
         margin-inline: 1em;
     }
 
     #gobelet span {
         font-size: 18px;
+    }
+
+    #gobelets {
+        margin-top: 20em;
+    }
+}
+
+@media (max-width: 360px) {
+    #gobelets {
+        margin-top: 25em;
     }
 }
 
