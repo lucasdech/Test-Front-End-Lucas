@@ -55,6 +55,7 @@ h1 {
 /* position et taille du logo */
 
 #logo {
+    margin-top: 2em;
     width: 100%;
     max-width: 200px;
     text-align: center;
@@ -69,25 +70,65 @@ h1 {
 /* placement de la div du titre */
 
 #title {
+    margin-top: 1em;
     position: absolute;
-    top: 20%;
+    top: 10%;
     width: 50%;
+    height: 50%;
     display: flex;
 }
 
+#title p {
+    margin-right: 0.5em;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    font-family: 'standrock', sans-serif;
+    font-size: clamp(20px, 4vw, 40px);
+}
 
+/* placement du point dexlamation */
 
 #ponctuation {
     position: relative;
     left: 30%;
-    top: 20%;
+    top: 3%;
     height: clamp(150px, 20vw, 214px);
 }
 
 /* Placement des SVG */
 
-.svg-111 {
-    position: absolute;
-    top: 10%;
-    left: 9.5%;
+
+/* ON place les SVG sur les lettres */
+
+.letter-p, .letter-r, .letter-a, .letter-3 {
+    position: relative;
+    display: inline-block;
+    line-height: 1;
+    font-size: 1em;
+    vertical-align: baseline;
+    margin-left: -0.3em;
+    margin-right: -0.3em;
 }
+
+.letter-p, .letter-3 {
+    margin-left: 0.1em;
+}
+
+/* Ajustements spécifiques pour R et A */
+
+
+
+.letter-p .svg-112, .letter-r .svg-111, .letter-a .svg-114, .letter-3 .svg-113 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+
+
+
