@@ -40,7 +40,7 @@ h1 {
 /* Section de jeu */
 #game {
     position: absolute;
-    height: 100vh;
+    height: 102vh;
     width: 100%;
     background-color: #cddd20;
     margin-top: 100vh;
