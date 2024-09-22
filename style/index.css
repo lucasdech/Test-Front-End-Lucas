@@ -13,9 +13,24 @@
     font-style: normal;
 }
 
+#canvasPlace {
+    height: 100vh;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 2px red solid; */
+}
+
+#canvas {
+    height: 50%;
+    width: 50%;
+    margin-top: 0;
+}
+
 /* Styles de base */
 html, body {
-    height: 150%;
+    height: 50%;
     margin: 0;
     padding: 0;
 }
