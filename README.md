@@ -1,25 +1,48 @@
-# Test-Front-End-Lucas
+# TEst Front Lucas
 
-# Brief Frontend :
+## Description
 
-# Réaliser un petit jeu avec les éléments suivants :
+TEst Front Lucas est une application web front-end conçue pour [décrire brièvement ce que fait votre application]. Ce projet utilise des technologies modernes pour offrir une expérience utilisateur fluide et réactive.
 
-    - Les trois textes "AHHH ATTEND", "ON VEUT TE PROPOSER UN JEU", "ARRÊTE DE SCROLLER" doivent apparaître avec une animation d'écriture lettre par lettre.
-    - L'animation des gobelets doit se déclencher automatiquement et tourner plusieurs fois avant de laisser le choix à l'utilisateur.
-    - Lorsque l'utilisateur clique sur un gobelet, celui-ci se soulève pour révéler le résultat.
-    - Si le résultat est "oui" ou "non", l'animation s'arrête, aucune autre action n'est requise.
+## Fonctionnalités
 
-# Visuel :
+- Fonctionnalité 1 : [Description de la fonctionnalité]
+- Fonctionnalité 2 : [Description de la fonctionnalité]
+- Fonctionnalité 3 : [Description de la fonctionnalité]
 
-    - Link : https://www.figma.com/design/TbAyAQm7jvLj75bqjonhE7/TEST-FRONT-END?node-id=1-5495&t=MlTX7coTT396jjlY-1
+## Prérequis
 
-# Contraintes techniques :
+Avant de commencer, assurez-vous d'avoir les éléments suivants installés sur votre machine :
 
-    - Ne pas utiliser de CMS (Wordpress, Drupal, etc.)
-    - Utilisation obligatoire de GSAP ou en Full Custom Javascript (pas de jQuery)
+- [Node.js](https://nodejs.org/) (version 14 ou supérieure)
+- [npm](https://www.npmjs.com/) ou [yarn](https://yarnpkg.com/)
 
-# Livrables :
+## Installation
 
-    - Code source du projet sur GitHub, avec documentation.
-    - URL du projet sur GitHub Pages (optionnel).
+1. Clonez le dépôt :
 
+    ```bash
+    git clone https://github.com/votre-utilisateur/TEst-Front-Lucas.git
+    ```
+
+2. Accédez au répertoire du projet :
+
+    ```bash
+    cd TEst-Front-Lucas
+    ```
+
+3. Installez les dépendances :
+
+    ```bash
+    npm install
+    ```
+
+    ou
+
+    ```bash
+    yarn install
+    ```
+
+## Configuration
+
+Créez un fichier `.env` à la racine du projet et ajoutez les variables d'environnement nécessaires. Par exemple :
