@@ -32,6 +32,35 @@ Aucun framework Front n'a été utilisé car ce n'est pas un gros projet, le van
     yarn install
     ```
 
+## Custom JS
+
+    1. Affichage Lettre par lettre :
+        ```javascript
+        function animateText() {
+  return new Promise((resolve) => {
+    const delay = 50;
+    let delayStart = 0;
+    const paragraphDelay = 350;
+
+    document.querySelectorAll("p.animated-text").forEach((elem) => {
+      const letters = elem.textContent.trim().split("");
+      elem.textContent = "";
+      elem.style.visibility = 'visible';
+
+      letters.forEach((letter, index) => {
+        setTimeout(() => {
+          elem.textContent += letter;
+        }, delayStart + delay * index);
+      });    
+
+      delayStart += delay * letters.length + paragraphDelay;
+    });
+
+    setTimeout(resolve, delayStart);
+            });
+        }
+        ```
+
 ## Gsap
 
  1. Installer gsap
