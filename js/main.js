@@ -58,6 +58,13 @@ function disableGobletAfterClick() {
 disableGobletAfterClick()
 
 
+function shakeGoblets() {
+    document.querySelectorAll('.gobelet').forEach(goblet => {
+        goblet.classList.add('shakeGoblets');
+    });
+}
+
+
 function moveGoblets() {
     return new Promise((resolve) => {
         const goblets = document.querySelectorAll('.gobelet');
