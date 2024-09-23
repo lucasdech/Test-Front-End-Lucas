@@ -2,8 +2,9 @@
 
 ## Description
 
-Voici mon test front pour Les mauvaises.
-le projet a été développé avec HTML, CSS et JavaScript. Aucun framework Front n'a été utilisé.
+Voici mon test front pour Les mauvaises. <br>
+le projet a été développé avec HTML, CSS et JavaScript.
+Aucun framework Front n'a été utilisé car ce n'est pas un gros projet, le vanilla est suffisant et les frawmeworks sont a mon sens inutiles ici.
 
 ## Installation
 
@@ -31,5 +32,7 @@ le projet a été développé avec HTML, CSS et JavaScript. Aucun framework Fron
     yarn install
     ```
 
-## Configuration
+## Gsap
+
+## Three.js
 
