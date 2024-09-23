@@ -112,6 +112,7 @@ chaque partie sera reprise dans une section du readme et expliqué.
     ```bash
     npm install gsap
     ``` 
+
 2. Utilisation dans le projet
     
     J'ai fait le choix d'utiliser GSAP avec un SCROLLTRIGGER qui va déclencher les animations en custom js.
@@ -150,7 +151,7 @@ le logo de la mquette figma fourni pour le test tecnhique a été réaliser sur 
     const canvas = document.getElementById('canvas');
 ```
 
-je vais tout d'abord aller chercher la div qui va contenir le canvas et puis celle qui va charger et ajouterle canvasdans deux const.
+je vais tout d'abord aller chercher la div qui va contenir le canvas et puis celle qui va charger et ajouterle canvas dans deux variables.
 
 
 Il faut ensuite Initialiser la Scene pour y placer le logo, la camera et placer cette dernière ou l'on veux selon le point de vue.
