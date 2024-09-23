@@ -78,8 +78,8 @@ function moveGoblets() {
                     goblet.classList.remove('moveLeftGoblets', 'moveRightGoblets');
                 });
                 resolve();
-            }, 500); // 500ms = durée de l'animation de secousse
-        }, 5000); // 5000ms = la durée de l'animation de mouvement
+            }, 500); 
+        }, 4000);
     });
 }
 

@@ -92,8 +92,8 @@ chaque partie sera reprise dans une section du readme et expliquée.
                     goblet.classList.remove('moveLeftGoblets', 'moveRightGoblets');
                 });
                 resolve();
-            }, 500); // 500ms = durée de l'animation de secousse
-        }, 5000); // 5000ms = la durée de l'animation de mouvement
+            }, 500);
+        }, 5000);
         });
         }
     ```
