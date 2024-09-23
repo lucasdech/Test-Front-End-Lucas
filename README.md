@@ -34,7 +34,8 @@ Aucun framework Front n'a été utilisé car ce n'est pas un gros projet, le van
 
 ## Custom JS
 
-    1. Affichage Lettre par lettre :
+1. Affichage Lettre par lettre :
+
         ```javascript
         function animateText() {
   return new Promise((resolve) => {
