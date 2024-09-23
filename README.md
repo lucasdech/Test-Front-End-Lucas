@@ -162,5 +162,17 @@ Il faut ensuite initialiser la Scene pour y placer le logo, la camera et placer 
     camera.position.set(0, 0, 3.5);
 ```
 
+Je charge mon fichier logo.glb et je l'ajoute a ma scène pour avoir un rendu 
+
+```javascript
+loader.load('../assets/Smiley/logo.glb', function(gltf) {
+            logoModel = gltf.scene;
+            
+            scene.add(logoModel);
+        }, undefined, function(error) {
+            console.error(error);
+        });
+```
+
 
 
