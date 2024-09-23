@@ -32,24 +32,11 @@ window.onload = () => {
             console.error(error);
         });
 
-        // const startTime = Date.now();
-
         function animate() {
             requestAnimationFrame(animate);
             renderer.setSize(canvas.clientWidth, canvas.clientHeight);
             logoModel.rotation.y += 0.01;
             
-            // if (logoModel) {
-            //     const currentTime = Date.now();
-            //     if (currentTime - startTime < 800) {
-            //         logoModel.rotation.y += 0.3;
-            //     } else if (currentTime - startTime < 1000) {
-            //         logoModel.rotation.y += 0.2;
-            //     } else if (currentTime - startTime > 1000) {
-            //         logoModel.rotation.y += 0.1;
-            //     }
-            // }
-
             renderer.render(scene, camera);
         }
         animate();

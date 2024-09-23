@@ -162,7 +162,7 @@ Il faut ensuite initialiser la Scene pour y placer le logo, la camera et placer 
     camera.position.set(0, 0, 3.5);
 ```
 
-Je charge mon fichier logo.glb et je l'ajoute a ma scène pour avoir un rendu 
+Je charge mon fichier logo.glb et je l'ajoute a ma scène pour avoir un rendu : 
 
 ```javascript
 loader.load('../assets/Smiley/logo.glb', function(gltf) {
@@ -172,6 +172,19 @@ loader.load('../assets/Smiley/logo.glb', function(gltf) {
         }, undefined, function(error) {
             console.error(error);
         });
+```
+
+pour finir j'anime le logo avec unr 'rotation.y' qui s'incremente de 0.01 et je lance ma fonction pour appeler l'animation
+
+```javascript
+    function animate() {
+        requestAnimationFrame(animate);
+        renderer.setSize(canvas.clientWidth, canvas.clientHeight);
+        logoModel.rotation.y += 0.01;
+        
+        renderer.render(scene, camera);
+    }
+    animate();
 ```
 
 
