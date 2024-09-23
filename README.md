@@ -5,6 +5,9 @@
 Voici mon test front pour Les mauvaises. <br>
 le projet a été développé avec HTML, CSS et JavaScript.
 Aucun framework Front n'a été utilisé car ce n'est pas un gros projet, le vanilla est suffisant et les frawmeworks sont a mon sens inutiles ici.
+les animation on été faite en custom js et lancer avec gsap.
+le logo a ete fait avec blender et importé sur le projet avec three.js.
+chaque partie sera reprise dans une section du readme et expliqué.
 
 ## Installation
 
@@ -39,9 +42,9 @@ Aucun framework Front n'a été utilisé car ce n'est pas un gros projet, le van
     ```javascript
     function animateText() {
         return new Promise((resolve) => {
-            const delay = 50;
-            let delayStart = 0;
-            const paragraphDelay = 350;
+            const delay = 50; // delay entre chaque lettre
+            let delayStart = 0; // temps initial avant de lancer la premiere lettre
+            const paragraphDelay = 350; // delay entre chaque paragraphe
 
             document.querySelectorAll("p.animated-text").forEach((elem) => {
                 const letters = elem.textContent.trim().split("");
@@ -61,6 +64,16 @@ Aucun framework Front n'a été utilisé car ce n'est pas un gros projet, le van
         });
     }
     ```
+
+    La fonction animate text me permet d'afficher le texte par lettre avec un léger delai entre chaque lettre et chaque paragraphe.
+    je Commence par definir toute mes constante et mes variable.
+    Ensuite je selection toute les class "animated-text" et je supprimer leurs contenu.
+    je met la visibilité a visible pour pouvoir voir le resultat sans attendre la fin de l'animation.
+    je split le contenu de chaque balise p en lettre.
+    je fais une boucle sur chaque lettre et affiche une a une grace a settimeout.
+    a chaque ajout de lettre je rajoute le delai entre chaque lettre.
+    et a chaque ajout de paragraphe je rajoute un delai entre chaque paragraphe.
+    et enfin je lance la fin de la promesse avec resolve.
 
 ## Gsap
 

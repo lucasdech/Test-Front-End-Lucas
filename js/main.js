@@ -5,9 +5,9 @@ gsap.registerPlugin(ScrollTrigger);
 
 function animateText() {
   return new Promise((resolve) => {
-    const delay = 50;
-    let delayStart = 0;
-    const paragraphDelay = 350;
+    const delay = 50; // delay entre chaque lettre
+    let delayStart = 0; // temps initial avant de lancer
+    const paragraphDelay = 350; // temps entre chaque paragraphe
 
     document.querySelectorAll("p.animated-text").forEach((elem) => {
       const letters = elem.textContent.trim().split("");
