@@ -65,7 +65,7 @@ chaque partie sera reprise dans une section du readme et expliqué.
     }
     ```
 
-    La fonction animate text me permet d'afficher le texte par lettre avec un léger delai entre chaque lettre et chaque paragraphe. <br>
+    La fonction animateText() me permet d'afficher le texte par lettre avec un léger delai entre chaque lettre et chaque paragraphe. <br>
     je Commence par definir toute mes constante et mes variable. <br>
     Ensuite je selection toute les class "animated-text" et je supprimer leurs contenu. <br>
     je met la visibilité a visible pour pouvoir voir le resultat sans attendre la fin de l'animation. <br>
@@ -74,6 +74,36 @@ chaque partie sera reprise dans une section du readme et expliqué.
     a chaque ajout de lettre je rajoute le delai entre chaque lettre.
     et a chaque ajout de paragraphe je rajoute un delai entre chaque paragraphe.
     et enfin je lance la fin de la promesse avec resolve.
+
+
+    2. Animation des gobelets :
+
+    ```javascript
+    function moveGoblets() {
+    return new Promise((resolve) => {
+        const goblets = document.querySelectorAll('.gobelet');
+        goblets[0].classList.add('moveLeftGoblets');
+        goblets[1].classList.add('moveRightGoblets');
+
+        setTimeout(() => {
+            shakeGoblets();
+            setTimeout(() => {
+                goblets.forEach(goblet => {
+                    goblet.classList.remove('moveLeftGoblets', 'moveRightGoblets');
+                });
+                resolve();
+            }, 500); // 500ms = durée de l'animation de secousse
+        }, 5000); // 5000ms = la durée de l'animation de mouvement
+        });
+        }
+    ```
+
+    La fonction moveGoblets() me permet d'animer les gobelets. <br>
+    Cette fonction utilise des promesses pour gérer les animations de manière asynchrone. <br>
+    Les gobelets sont déplacés vers la gauche et la droite en ajoutant des classes spécifiques qui déclenchent des animations CSS. <br>
+    Après un délai de 5000ms, une animation de secousse est déclenchée pour donner l'impression que les gobelets tremblent. <br>
+    Une fois l'animation de secousse terminée, les classes d'animation sont supprimées pour réinitialiser les gobelets à leur état initial. <br>
+    La fonction se termine en appelant resolve() pour indiquer que toutes les animations sont terminées.
 
 ## Gsap
 
