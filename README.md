@@ -1,21 +1,9 @@
-# TEst Front Lucas
+# Test Front Lucas
 
 ## Description
 
-TEst Front Lucas est une application web front-end conçue pour [décrire brièvement ce que fait votre application]. Ce projet utilise des technologies modernes pour offrir une expérience utilisateur fluide et réactive.
-
-## Fonctionnalités
-
-- Fonctionnalité 1 : [Description de la fonctionnalité]
-- Fonctionnalité 2 : [Description de la fonctionnalité]
-- Fonctionnalité 3 : [Description de la fonctionnalité]
-
-## Prérequis
-
-Avant de commencer, assurez-vous d'avoir les éléments suivants installés sur votre machine :
-
-- [Node.js](https://nodejs.org/) (version 14 ou supérieure)
-- [npm](https://www.npmjs.com/) ou [yarn](https://yarnpkg.com/)
+Voici mon test front pour Les mauvaises.
+le projet a été développé avec HTML, CSS et JavaScript. Aucun framework Front n'a été utilisé.
 
 ## Installation
 
@@ -45,4 +33,3 @@ Avant de commencer, assurez-vous d'avoir les éléments suivants installés sur 
 
 ## Configuration
 
-Créez un fichier `.env` à la racine du projet et ajoutez les variables d'environnement nécessaires. Par exemple :
