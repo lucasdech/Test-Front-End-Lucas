@@ -46,11 +46,17 @@ function upGoblet(event) {
     }
 }
 
-function shakeGoblets() {
-    document.querySelectorAll('.gobelet').forEach(goblet => {
-        goblet.classList.add('shakeGoblets');
+function disableGobletAfterClick() {
+  const goblets = document.querySelectorAll('.goblet');
+
+  goblets.forEach(goblet => {
+    goblet.addEventListener('click', () => {
+      goblet.classList.add('disable');
     });
+  });
 }
+disableGobletAfterClick()
+
 
 function moveGoblets() {
     return new Promise((resolve) => {

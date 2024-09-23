@@ -52,6 +52,10 @@ h1 {
     font-size: clamp(40px, 8vw, 90px);
 }
 
+ .disable {
+    cursor: not-allowed;
+ }
+
 /* Section de jeu */
 #game {
     position: absolute;
@@ -346,7 +350,7 @@ h1 {
     }
 
     #ponctuation {
-        margin-left: 12%;
+        margin-left: 17%;
     }
 
     h1 {
