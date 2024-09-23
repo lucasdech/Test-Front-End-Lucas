@@ -117,5 +117,49 @@ chaque partie sera reprise dans une section du readme et expliqué.
     J'ai fait le choix d'utiliser GSAP avec un SCROLLTRIGGER qui va déclencher les animations en custom js.
     avec se choix je peux lancer mes animations a l'arriver de l'utilisateur au bon endroit dans la page.
 
+3. Lancement des animations avec GSAP
+
+    ```javascript 
+    ScrollTrigger.create({
+    trigger: '#title',
+    start: 'top 80%',
+    onEnter: async () => {
+      await animateText();
+      await downGoblets();
+      await moveGoblets();
+    },
+    once: true
+  });
+  ```
+
+  GSAP est ici utiliser pour lancer toute mes animations custom une par une et dans l'ordre,
+  avec l'utilisation des promesses je peut etre sur que l'animaiton precedente est terminer pour lancer la suivante.
+  Toute les animations seront donc lancer les unes après les autres au trigger de '#tittle'
+  le once true est la pour faire en sorte que l'animation ne se relance pas comme indiquer dans la consigne sauf au rechargeletn de la page  
+
 ## Three.js
+
+1. Réalisation du logo 
+
+le logo de la mquette figma fourni pour le test tecnhique a été réaliser sur blender, puis exporter en format .glb pour pouvoir l'integrer a mon site avec THREE.js.
+
+2. Ajout du logo sur la landing Page 
+
+```javascript 
+    const canvasPlace = document.getElementById('canvasPlace');
+    const canvas = document.getElementById('canvas');
+```
+
+je vais tout d'abord aller chercher la div qui va contenir le canvas et puis celle qui va charger et ajouterle canvasdans deux const.
+
+
+Il faut ensuite Initialiser la Scene pour y placer le logo, la camera et placer cette dernière ou l'on veux selon le point de vue.
+
+```javascript
+    const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(70, canvas.clientWidth / canvas.clientHeight, 0.1, 1000);
+            camera.position.set(0, 0, 3.5);
+```
+
+
 
