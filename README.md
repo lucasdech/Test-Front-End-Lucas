@@ -65,10 +65,10 @@ chaque partie sera reprise dans une section du readme et expliqué.
     }
     ```
 
-    La fonction animate text me permet d'afficher le texte par lettre avec un léger delai entre chaque lettre et chaque paragraphe.
-    je Commence par definir toute mes constante et mes variable.
-    Ensuite je selection toute les class "animated-text" et je supprimer leurs contenu.
-    je met la visibilité a visible pour pouvoir voir le resultat sans attendre la fin de l'animation.
+    La fonction animate text me permet d'afficher le texte par lettre avec un léger delai entre chaque lettre et chaque paragraphe. <br>
+    je Commence par definir toute mes constante et mes variable. <br>
+    Ensuite je selection toute les class "animated-text" et je supprimer leurs contenu. <br>
+    je met la visibilité a visible pour pouvoir voir le resultat sans attendre la fin de l'animation. <br>
     je split le contenu de chaque balise p en lettre.
     je fais une boucle sur chaque lettre et affiche une a une grace a settimeout.
     a chaque ajout de lettre je rajoute le delai entre chaque lettre.
