@@ -1,14 +1,14 @@
 /* Polices personnalisées */
 @font-face {
     font-family: 'soulmaze';
-    src: url('../police/made_soulmaze/MADE\ Soulmaze\ PERSONAL\ USE.otf') format('truetype');
+    src: url('/police/made_soulmaze/MADE\ Soulmaze\ PERSONAL\ USE.otf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'standrock';
-    src: url('../police/stand-rock-font/Standrock-gxGP4.ttf') format('truetype');
+    src: url('/police/stand-rock-font/Standrock-gxGP4.ttf') format('truetype');
     font-weight: bold;
     font-style: normal;
 }

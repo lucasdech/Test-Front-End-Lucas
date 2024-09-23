@@ -24,7 +24,7 @@ window.onload = () => {
 
         let logoModel = null;
 
-        loader.load('../assets/Smiley/logo.glb', function(gltf) {
+        loader.load('/assets/Smiley/logo.glb', function(gltf) {
             logoModel = gltf.scene;
             
             scene.add(logoModel);
