@@ -76,7 +76,7 @@ chaque partie sera reprise dans une section du readme et expliqué.
     et enfin je lance la fin de la promesse avec resolve.
 
 
-    2. Animation des gobelets :
+2. Animation des gobelets :
 
     ```javascript
     function moveGoblets() {
