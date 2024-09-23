@@ -121,17 +121,17 @@ chaque partie sera reprise dans une section du readme et expliquée.
 3. Lancement des animations avec GSAP
 
     ```javascript 
-    ScrollTrigger.create({
-    trigger: '#title',
-    start: 'top 80%',
-    onEnter: async () => {
-      await animateText();
-      await downGoblets();
-      await moveGoblets();
-    },
-    once: true
-    });
-  ```
+        ScrollTrigger.create({
+        trigger: '#title',
+        start: 'top 80%',
+        onEnter: async () => {
+        await animateText();
+        await downGoblets();
+        await moveGoblets();
+        },
+        once: true
+        });
+    ```
 
   GSAP est ici utilisé pour lancer toutes mes animations custom une par une et dans l'ordre,
   avec l'utilisation des promesses, je peux être sûr que l'animation précédente est terminée pour lancer la suivante.
@@ -158,8 +158,8 @@ Il faut ensuite initialiser la Scene pour y placer le logo, la camera et placer 
 
 ```javascript
     const scene = new THREE.Scene();
-            const camera = new THREE.PerspectiveCamera(70, canvas.clientWidth / canvas.clientHeight, 0.1, 1000);
-            camera.position.set(0, 0, 3.5);
+    const camera = new THREE.PerspectiveCamera(70, canvas.clientWidth / canvas.clientHeight, 0.1, 1000);
+    camera.position.set(0, 0, 3.5);
 ```
 
 
