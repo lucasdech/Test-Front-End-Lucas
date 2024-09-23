@@ -4,10 +4,10 @@
 
 Voici mon test front pour Les mauvaises. <br>
 le projet a été développé avec HTML, CSS et JavaScript.
-Aucun framework Front n'a été utilisé car ce n'est pas un gros projet, le vanilla est suffisant et les frawmeworks sont a mon sens inutiles ici.
-les animation on été faite en custom js et lancer avec gsap.
-le logo a ete fait avec blender et importé sur le projet avec three.js.
-chaque partie sera reprise dans une section du readme et expliqué.
+Aucun framework Front n'a été utilisé car ce n'est pas un gros projet, le vanilla est suffisant et les frameworks sont à mon sens inutiles ici.
+les animations ont été faites en custom js et lancées avec gsap.
+le logo a été fait avec blender et importé sur le projet avec three.js.
+chaque partie sera reprise dans une section du readme et expliquée.
 
 ## Installation
 
@@ -42,9 +42,9 @@ chaque partie sera reprise dans une section du readme et expliqué.
     ```javascript
     function animateText() {
         return new Promise((resolve) => {
-            const delay = 50; // delay entre chaque lettre
-            let delayStart = 0; // temps initial avant de lancer la premiere lettre
-            const paragraphDelay = 350; // delay entre chaque paragraphe
+            const delay = 50; // délai entre chaque lettre
+            let delayStart = 0; // temps initial avant de lancer la première lettre
+            const paragraphDelay = 350; // délai entre chaque paragraphe
 
             document.querySelectorAll("p.animated-text").forEach((elem) => {
                 const letters = elem.textContent.trim().split("");
@@ -65,15 +65,15 @@ chaque partie sera reprise dans une section du readme et expliqué.
     }
     ```
 
-    La fonction animateText() me permet d'afficher le texte par lettre avec un léger delai entre chaque lettre et chaque paragraphe. <br>
-    je Commence par definir toute mes constante et mes variable. <br>
-    Ensuite je selection toute les class "animated-text" et je supprimer leurs contenu. <br>
-    je met la visibilité a visible pour pouvoir voir le resultat sans attendre la fin de l'animation. <br>
-    je split le contenu de chaque balise p en lettre.
-    je fais une boucle sur chaque lettre et affiche une a une grace a settimeout.
-    a chaque ajout de lettre je rajoute le delai entre chaque lettre.
-    et a chaque ajout de paragraphe je rajoute un delai entre chaque paragraphe.
-    et enfin je lance la fin de la promesse avec resolve.
+    La fonction animateText() me permet d'afficher le texte par lettre avec un léger délai entre chaque lettre et chaque paragraphe. <br>
+    Je commence par définir toutes mes constantes et mes variables. <br>
+    Ensuite, je sélectionne toutes les classes "animated-text" et je supprime leur contenu. <br>
+    Je mets la visibilité à visible pour pouvoir voir le résultat sans attendre la fin de l'animation. <br>
+    Je split le contenu de chaque balise p en lettres.
+    Je fais une boucle sur chaque lettre et affiche une à une grâce à setTimeout.
+    À chaque ajout de lettre, je rajoute le délai entre chaque lettre.
+    Et à chaque ajout de paragraphe, je rajoute un délai entre chaque paragraphe.
+    Et enfin, je lance la fin de la promesse avec resolve.
 
 
 2. Animation des gobelets :
@@ -116,7 +116,7 @@ chaque partie sera reprise dans une section du readme et expliqué.
 2. Utilisation dans le projet
     
     J'ai fait le choix d'utiliser GSAP avec un SCROLLTRIGGER qui va déclencher les animations en custom js.
-    avec se choix je peux lancer mes animations a l'arriver de l'utilisateur au bon endroit dans la page.
+    avec ce choix, je peux lancer mes animations à l'arrivée de l'utilisateur au bon endroit dans la page.
 
 3. Lancement des animations avec GSAP
 
@@ -130,19 +130,19 @@ chaque partie sera reprise dans une section du readme et expliqué.
       await moveGoblets();
     },
     once: true
-  });
+    });
   ```
 
-  GSAP est ici utiliser pour lancer toute mes animations custom une par une et dans l'ordre,
-  avec l'utilisation des promesses je peut etre sur que l'animaiton precedente est terminer pour lancer la suivante.
-  Toute les animations seront donc lancer les unes après les autres au trigger de '#tittle'
-  le once true est la pour faire en sorte que l'animation ne se relance pas comme indiquer dans la consigne sauf au rechargeletn de la page  
+  GSAP est ici utilisé pour lancer toutes mes animations custom une par une et dans l'ordre,
+  avec l'utilisation des promesses, je peux être sûr que l'animation précédente est terminée pour lancer la suivante.
+  Toutes les animations seront donc lancées les unes après les autres au trigger de '#title'
+  le once true est là pour faire en sorte que l'animation ne se relance pas comme indiqué dans la consigne, sauf au rechargement de la page  
 
 ## Three.js
 
 1. Réalisation du logo 
 
-le logo de la mquette figma fourni pour le test tecnhique a été réaliser sur blender, puis exporter en format .glb pour pouvoir l'integrer a mon site avec THREE.js.
+le logo de la maquette Figma fourni pour le test technique a été réalisé sur blender, puis exporté en format .glb pour pouvoir l'intégrer à mon site avec THREE.js.
 
 2. Ajout du logo sur la landing Page 
 
@@ -151,10 +151,10 @@ le logo de la mquette figma fourni pour le test tecnhique a été réaliser sur 
     const canvas = document.getElementById('canvas');
 ```
 
-je vais tout d'abord aller chercher la div qui va contenir le canvas et puis celle qui va charger et ajouterle canvas dans deux variables.
+Je vais tout d'abord aller chercher la div qui va contenir le canvas et puis celle qui va charger et ajouter le canvas dans deux variables.
 
 
-Il faut ensuite Initialiser la Scene pour y placer le logo, la camera et placer cette dernière ou l'on veux selon le point de vue.
+Il faut ensuite initialiser la Scene pour y placer le logo, la camera et placer cette dernière où l'on veut selon le point de vue.
 
 ```javascript
     const scene = new THREE.Scene();
