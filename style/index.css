@@ -93,7 +93,7 @@ h1 {
 #title p {
     margin-right: 0.5em;
     position: absolute;
-    bottom: 0;
+    bottom: 15%;
     right: 0;
     font-family: 'standrock', sans-serif;
     font-size: clamp(20px, 4vw, 40px);
@@ -274,6 +274,21 @@ h1 {
 
 /* Media queries */
 @media (max-width: 768px) {
+
+    #canvasPlace {
+        width: 100%;
+    }
+    #canvas {
+        height: 50%;
+        width: 80%;
+    }
+
+    #title p {
+        position: absolute;
+        bottom: 20%; 
+        left: 35%;
+    }
+
     #gobelet {
         width: 40%;
     }
@@ -304,6 +319,19 @@ h1 {
 }
 
 @media (max-width: 480px) {
+
+    #canvasPlace {
+        width: 100%;
+    }
+    #canvas {
+        height: 50%;
+        width: 100%;
+    }
+
+    h1 {
+        font-size: clamp(20px, 8vw, 40px);
+    }
+
     #gobelet {
         width: 30%;
     }
@@ -327,9 +355,13 @@ h1 {
         transform: rotate(-4.03deg);
     }
 
+    #title {
+        margin-top: 3em; /* Augmenter la marge supérieure pour éloigner le titre du logo */
+    }
+
     #title p {
         position: absolute;
-        bottom: 45%;
+        bottom: 40%; /* Ajuster la position pour éloigner le titre du logo */
         left: 35%;
     }
 
@@ -358,6 +390,17 @@ h1 {
     .text2 {
         position: absolute;
         top: 40%;
+        left: 0;
+        transform: rotate(-4.03deg);
+    }
+
+    #title {
+        margin-top: 4em; /* Augmenter encore la marge supérieure pour les écrans plus petits */
+    }
+
+    .text2 {
+        position: absolute;
+        top: 45%; /* Ajuster la position pour éloigner le titre du logo */
         left: 0;
         transform: rotate(-4.03deg);
     }
