@@ -36,7 +36,7 @@ html, body {
 }
 
 body {
-    min-height: 100vh;
+    min-height: 80vh;
     background-color: #6E22DD;
     color: #28282D;
 }
@@ -51,10 +51,6 @@ h1 {
     font-family: 'soulmaze', sans-serif;
     font-size: clamp(40px, 8vw, 90px);
 }
-
- .disable {
-    cursor: not-allowed;
- }
 
 /* Section de jeu */
 #game {
@@ -340,6 +336,10 @@ h1 {
 }
 
 @media (max-width: 480px) {
+
+    body {
+        height: 50vh;
+    }
 
     #canvasPlace {
         width: 100%;
