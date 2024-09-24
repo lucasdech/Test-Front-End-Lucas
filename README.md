@@ -4,7 +4,7 @@
 
 Voici mon test front pour Les mauvaises. <br>
 le projet a été développé avec HTML, CSS et JavaScript.
-Aucun framework Front n'a été utilisé car ce n'est pas un gros projet, le vanilla est suffisant et les frameworks sont à mon sens inutiles ici.
+Aucun framework Front n'a été utilisé car ce n'est pas un gros projet.
 les animations ont été faites en custom js et lancées avec gsap.
 le logo a été fait avec blender et importé sur le projet avec three.js.
 chaque partie sera reprise dans une section du readme et expliquée.

@@ -434,3 +434,12 @@ h1 {
         transform: rotate(-4.03deg);
     }
 }
+
+@media (min-width: 1700) {
+    
+    #ponctuation {
+        position: absolute;
+        bottom: 10%;
+        margin-left: 17%;
+    }
+}
