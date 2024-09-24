@@ -46,21 +46,11 @@ function upGoblet(event) {
     }
 }
 
-function disableGobletAfterClick() {
-  const goblets = document.querySelectorAll('.goblet');
-
-  goblets.forEach(goblet => {
-    goblet.addEventListener('click', () => {
-      goblet.classList.add('disable');
-    });
-  });
-}
-disableGobletAfterClick()
-
 
 function shakeGoblets() {
     document.querySelectorAll('.gobelet').forEach(goblet => {
-        goblet.classList.add('shakeGoblets');
+      goblet.classList.remove('disable')
+      goblet.classList.add('shakeGoblets');
     });
 }
 

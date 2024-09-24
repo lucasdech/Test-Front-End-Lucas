@@ -171,6 +171,10 @@ h1 {
     flex-wrap: wrap;
 }
 
+.disable {
+    pointer-events: none;
+}
+
 #gobelet {
     position: relative;
     display: flex;
