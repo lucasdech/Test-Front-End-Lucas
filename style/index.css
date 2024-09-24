@@ -19,12 +19,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    /* border: 2px red solid; */
+    border: 2px red solid;
 }
 
 #canvas {
-    height: 50%;
-    width: 50%;
+    height: 60%;
+    width: 60%;
     margin-top: 0;
 }
 
@@ -439,6 +439,10 @@ h1 {
     
     h1 {
         font-size: 100px;
+    }
+
+    #title {
+        margin-left: 8%;
     }
 
     .text2 {
