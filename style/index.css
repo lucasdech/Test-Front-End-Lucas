@@ -444,6 +444,12 @@ h1 {
         margin-left: 8%;
     }
 
+    #title p {
+        position: absolute;
+        bottom: 12%;
+        right: 20%;
+    }
+
     .text2 {
         position: absolute;
         top: 45%; 
